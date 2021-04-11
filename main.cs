@@ -1,5 +1,7 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Text.RegularExpressions;
 
 class MainClass {
   public static void Main (string[] args) {
@@ -23,10 +25,10 @@ class MainClass {
     }
     else if(Cliente.Florim > 49){
       
-      Console.Write("\r\nDigite 1 para conhecer nosso catálogo, 2 para comprar ou 3 para fechar\r\n");
+      Console.Write("\r\nDigite 1 para conhecer nosso catálogo ou 2 para fechar\r\n");
       
       do{
-         Console.Write("Minha opção(1),(2) e (3): ");
+         Console.Write("Minha opção(1),(2): ");
          opcao = Convert.ToInt32(Console.ReadLine());
          Console.Clear();
           
@@ -36,16 +38,11 @@ class MainClass {
           
           lojinha.vender(Cliente.compra(), Cliente);
         }
-        if(opcao == 2){
-          
-          lojinha.vender(Cliente.compra(), Cliente);
-          
-        }
         else if(opcao != 1){
           Console.WriteLine("Okay, " +Cliente.NomeP + "!" + " Feche a porta ao sair e volte sempre!");
         }
       }
-      while (opcao != 3);
+      while (opcao != 2);
      
     }
   }  
